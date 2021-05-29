@@ -1,5 +1,13 @@
+require('dotenv').config();
+require('./mongo');
+
 const express = require('express');
 const cors = require('cors');
+
+const userRouter = require('./controllers/user');
+
+const notFound = require('./middlewares/notFound');
+const handleErros = require('./middlewares/handleErrors');
 
 const app = express();
 
@@ -8,6 +16,10 @@ app.use(express.json());
 
 app.set('port', process.env.PORT || 4000);
 
+app.use('/api/users', userRouter);
+
+app.use(notFound);
+app.use(handleErros);
 
 app.listen(app.get('port'), () => {
   console.log('Servidor en puerto ' + app.get('port'));
