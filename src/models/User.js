@@ -33,11 +33,7 @@ const userSchema = new Schema({
     maxlength: 40,
     unique: true
   },
-  password: {
-    type: String,
-    minlength: 6,
-    maxlength: 40
-  },
+  password: String,
   date: Date,
   qualifications: [{
     type: Schema.Types.ObjectId,
