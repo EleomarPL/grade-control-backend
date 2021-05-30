@@ -1,5 +1,6 @@
-POST  http://localhost:4000/api/qualifications/create-qualification/60b2b46cf6b26548a0563df2
+POST  http://localhost:4000/api/qualifications/create-qualification
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYjJiNTdmZjk0ZDBjNDAyODkxM2UwNiIsInVzZXIiOiJ1c3VhcmlvIiwiaWF0IjoxNjIyMzg5MTg4fQ.xOcar8hsxF90mN2HpiPxQHTBEippO_D-TS-dX60rILM
 
 {
   "course": "Español",

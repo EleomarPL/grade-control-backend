@@ -1,5 +1,6 @@
-PUT http://localhost:4000/api/users/edit/60b2b57ff94d0c4028913e06
+PUT http://localhost:4000/api/users/edit/
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYjJiNTdmZjk0ZDBjNDAyODkxM2UwNiIsInVzZXIiOiJ1c3VhcmlvIiwiaWF0IjoxNjIyMzg5MTg4fQ.xOcar8hsxF90mN2HpiPxQHTBEippO_D-TS-dX60rILM
 
 {
   "name": "Nombre",

@@ -1,6 +1,7 @@
 const qualificationRouter = require('express').Router();
 const Qualification = require('../models/Qualification');
 const User = require('../models/User');
+const userStractor = require('../middlewares/userStractor');
 
 qualificationRouter.get('/', async(req, res) => {
 
@@ -11,11 +12,11 @@ qualificationRouter.get('/', async(req, res) => {
   res.send(getAllQualification);
 });
 
-qualificationRouter.post('/create-qualification/:id', async(req, res, next) => {
+qualificationRouter.post('/create-qualification/', userStractor, async(req, res, next) => {
   const {
     course, unit, score, semester
   } = req.body;
-  const {id} = req.params;
+  const {userId: id} = req;
 
   const getUser = await User.findById(id);
   try {
@@ -40,7 +41,7 @@ qualificationRouter.post('/create-qualification/:id', async(req, res, next) => {
   }
 });
 
-qualificationRouter.put('/edit/:id', async(req, res, next) => {
+qualificationRouter.put('/edit/:id', userStractor, async(req, res, next) => {
   const {
     course, unit, score, semester
   } = req.body;
@@ -65,7 +66,7 @@ qualificationRouter.put('/edit/:id', async(req, res, next) => {
   }
 });
 
-qualificationRouter.delete('/delete/:id', (req, res, next) => {
+qualificationRouter.delete('/delete/:id', userStractor, (req, res, next) => {
   const { id } = req.params;
 
   Qualification.findByIdAndRemove(id).then(() => {

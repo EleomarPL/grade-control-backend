@@ -2,6 +2,7 @@ const userRouter = require('express').Router();
 const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
+const userStractor = require('../middlewares/userStractor');
 
 userRouter.get('/', async(req, res) => {
   const users = await User.find({});
@@ -34,11 +35,11 @@ userRouter.post('/create-user', async(req, res, next) => {
   }
 });
 
-userRouter.put('/edit/:id', async(req, res, next) => {
+userRouter.put('/edit/', userStractor, async(req, res, next) => {
   const {
     name, lastName, motherLastName, phone, email, userName, password
   } = req.body;
-  const { id } = req.params;
+  const {userId: id} = req;
   try {
     const passwordHash = await bcrypt.hash(password, 10);
     if (!(name && lastName && motherLastName && phone && email &&

@@ -2,6 +2,8 @@ const ERROR_HANDLERS = {
   defaultError: res => res.status(500).end(),
   CastError: res =>
     res.status(400).send({error: 'id user is malford'}),
+  JsonWebTokenError: (res) =>
+    res.status(401).json({error: 'Token missing or invalid'}),
   ValidationError: (res, err) => res.status(409).send({error: err.message})
 };
 
