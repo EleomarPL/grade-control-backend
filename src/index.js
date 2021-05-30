@@ -5,6 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 const userRouter = require('./controllers/user');
+const qualificationRouter = require('./controllers/qualification');
 
 const notFound = require('./middlewares/notFound');
 const handleErros = require('./middlewares/handleErrors');
@@ -17,6 +18,7 @@ app.use(express.json());
 app.set('port', process.env.PORT || 4000);
 
 app.use('/api/users', userRouter);
+app.use('/api/qualifications', qualificationRouter);
 
 app.use(notFound);
 app.use(handleErros);

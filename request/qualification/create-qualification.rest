@@ -1,0 +1,21 @@
+POST  http://localhost:4000/api/qualifications/create-qualification/60b2b46cf6b26548a0563df2
+Content-Type: application/json
+
+{
+  "course": "Español",
+  "unit": "2",
+  "score": "100",
+  "semester": "6"
+}
+
+###
+
+POST  http://localhost:4000/api/qualifications/create-qualification/60b2b46cf6b26548a0563df2
+Content-Type: application/json
+
+{
+  "course": "Matematicas",
+  "unit": "1",
+  "score": "100",
+  "semester": "1"
+}

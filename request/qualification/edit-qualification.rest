@@ -1,0 +1,9 @@
+PUT http://localhost:4000/api/qualifications/edit/60b3a64152b80a247473506b
+Content-Type: application/json
+
+{
+  "course": "Español",
+  "unit": "1",
+  "score": "80",
+  "semester": "6"
+}
