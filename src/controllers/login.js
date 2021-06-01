@@ -24,7 +24,12 @@ loginRouter.post('/', async(req, res) => {
 
   const token = jwt.sign(userForToken, process.env.WORD_SECRET);
   res.send({
-    user: findUser.user,
+    name: findUser.name,
+    lastName: findUser.lastName,
+    motherLastName: findUser.motherLastName,
+    phone: findUser.phone,
+    email: findUser.email,
+    userName: findUser.userName,
     token
   });
 

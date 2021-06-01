@@ -3,13 +3,10 @@ const Qualification = require('../models/Qualification');
 const User = require('../models/User');
 const userStractor = require('../middlewares/userStractor');
 
-qualificationRouter.get('/', async(req, res) => {
-
-  const getAllQualification = await Qualification.find({}).populate('user', {
-    userName: 1,
-    date: 1
-  });
-  res.send(getAllQualification);
+qualificationRouter.get('/', userStractor, async(req, res) => {
+  const {userId: id} = req;
+  const getQualifications = await Qualification.find({user: id});
+  res.send(getQualifications);
 });
 
 qualificationRouter.post('/create-qualification/', userStractor, async(req, res, next) => {

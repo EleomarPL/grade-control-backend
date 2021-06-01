@@ -18,7 +18,7 @@ const quealificationSchema = new Schema({
   },
   semester: {
     type: Number,
-    min: 0,
+    min: 1,
     max: 15
   },
   user: {
