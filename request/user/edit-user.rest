@@ -1,6 +1,6 @@
 PUT http://localhost:4000/api/users/edit/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYjJiNTdmZjk0ZDBjNDAyODkxM2UwNiIsInVzZXIiOiJ1c3VhcmlvIiwiaWF0IjoxNjIyMzg5MTg4fQ.xOcar8hsxF90mN2HpiPxQHTBEippO_D-TS-dX60rILM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYjg3MjE4ZTdiOGYwM2FhODgzZDcyZSIsInVzZXIiOiJ1c3VhcmlvIiwiaWF0IjoxNjIyNzAyNjQxfQ.8e92hNf3cnyaddxfOFJKweGXvqOAlRBN1OSEJRiYUOw
 
 {
   "name": "Nombre",
@@ -8,8 +8,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYjJiNTdmZ
   "motherLastName": "Apellido materno",
   "phone": "9581231231",
   "email": "correoelectronico@ejemplo.com",
-  "userName": "usuario",
-  "password": "contraseña"
+  "userName": "usuario"
 }
 
 ### error

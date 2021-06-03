@@ -28,11 +28,11 @@ POST  http://localhost:4000/api/users/create-user
 Content-Type: application/json
 
 {
-  "name": "a",
+  "name": "aa",
   "lastName": "Apellido paterno",
   "motherLastName": "Apellido materno",
   "phone": "9581231231",
   "email": "correoelectronico@ejemplo.com",
-  "userName": "usuario2",
+  "userName": "usuario",
   "password": "contraseña"
 }

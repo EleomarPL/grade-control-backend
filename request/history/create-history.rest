@@ -1,0 +1,18 @@
+POST http://localhost:4000/api/history/create-history
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYjUzZjgxOGFlNDQ0NGJjMDExMGI1YiIsInVzZXIiOiJrZW5qaTEyMyIsImlhdCI6MTYyMjY4ODEzN30.f-yT2GjnPOMxM_mtd6KPmlVK2lGUi0lYf4W_bJRatvU
+
+{
+  "operation": "Se cambio el nombre de matematicas por mate3"
+}
+
+###
+POST http://localhost:4000/api/history/create-history
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYjgzY2I0YWM3YWY5NGJiODYwNzIxYSIsInVzZXIiOiJ1c3VhcmlvIiwiaWF0IjoxNjIyNjkwMjg2fQ.MCBPxhvHPpwAHK9DYC9FUIHd3v1GSjCW8ydROPxN01g
+
+{
+  "operation": "Se cambio el nombre de matematicas por mate3"
+}
+
+
