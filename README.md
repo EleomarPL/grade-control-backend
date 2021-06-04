@@ -16,6 +16,7 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 Antes de ejecutar debes crear un archivo _.env_ y declarar 2 variables de entorno, que son:
 - STRING_CONNECTION, que deberá tener la API de conexión a mongoDB
 - WORD_SECRET, la palabra secreta con la que se firmara el token
+
 Les recomiendo no compartir estos datos
 
 Tal vez suene muy obvio pero primero clone el repositorio
