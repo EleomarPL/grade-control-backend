@@ -1,0 +1,6 @@
+services:
+  db:
+    image: mongo:latest
+    container_name: gestiocalmongo
+    ports:
+      - 27017:27017
