@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/",
-    "start-dev": "nodemon ./src/"
+    "dev": "nodemon ./src/"
   },
   "keywords": [],
   "author": "Eleomar Pedro Lorenzo",
