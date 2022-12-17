@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/User');
+const { logLogin } = require('../utils/logsTypes');
 
 loginRouter.post('/', async(req, res) => {
   const {userName = ' ', password = ''} = req.body;
@@ -23,6 +24,8 @@ loginRouter.post('/', async(req, res) => {
   };
 
   const token = jwt.sign(userForToken, process.env.WORD_SECRET);
+  logLogin(findUser.userName);
+
   res.send({
     name: findUser.name,
     lastName: findUser.lastName,

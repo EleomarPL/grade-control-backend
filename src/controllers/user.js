@@ -4,10 +4,18 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const userStractor = require('../middlewares/userStractor');
 
+const {
+  logGet, logCreate, logUpdate, logDelete,
+  logErrorCreate, logErrorUpdate, logErrorDelete
+} = require('../utils/logsTypes');
+const NAME_LOG = 'USER';
+
 userRouter.get('/', userStractor, async(req, res) => {
   const {userId: id} = req;
 
   const user = await User.findById(id);
+
+  logGet({ object: NAME_LOG });
   res.json(user);
 });
 
@@ -31,8 +39,10 @@ userRouter.post('/create-user', async(req, res, next) => {
       date: new Date()
     });
     const savedUser = await newUser.save();
+    logCreate({ object: NAME_LOG, id: savedUser.id });
     res.send(savedUser);
   } catch (err) {
+    logErrorCreate({ object: NAME_LOG});
     next(err);
   }
 });
@@ -55,8 +65,10 @@ userRouter.put('/edit-data/', userStractor, async(req, res, next) => {
       email, userName
     };
     const savedChangeUser = await User.findByIdAndUpdate(id, editUser, {new: true});
+    logUpdate({ object: NAME_LOG, id });
     res.send(savedChangeUser);
   } catch (err) {
+    logErrorUpdate({ object: NAME_LOG });
     next(err);
   }
 });
@@ -87,8 +99,10 @@ userRouter.put('/edit-password/', userStractor, async(req, res, next) => {
       password: passwordHash
     };
     const savedChangeUser = await User.findByIdAndUpdate(id, editUser, {new: true});
+    logUpdate({ object: NAME_LOG, id });
     res.send(savedChangeUser);
   } catch (err) {
+    logErrorUpdate({ object: NAME_LOG });
     next(err);
   }
 });
@@ -97,8 +111,10 @@ userRouter.delete('/delete', userStractor, (req, res, next) => {
   const {userId: id} = req;
 
   User.findByIdAndRemove(id).then(() => {
+    logDelete({ object: NAME_LOG, id });
     res.status(204).end();
   }).catch(err => {
+    logErrorDelete({ object: NAME_LOG });
     next(err);
   });
 });
